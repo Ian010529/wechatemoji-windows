@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
-  "prepared_at": "2026-11-03T06:02:21.159048+00:00",
+  "prepared_at": "2026-11-03T06:04:47.455057+00:00",
   "target_repository": "Ian010529/wechatemoji-windows",
   "visibility": "private",
   "branch": "main",
   "upstream": "https://github.com/henrytian1998/wechatemoji",
   "upstream_commit": "ecd6b55ce0d1eac9f74babf50c3820a2074db22a",
-  "source_zip_sha256": "561fee4a108f67fd43912941b5ecf48046c06f665a8daa73f94e1f678690f498",
+  "source_zip_sha256": "f335e7f877656224f7369c0b212f1e68a4e1be0f71cd4f0490bb182ace98e112",
   "source_files": [
     {
       "path": "LICENSE",
@@ -120,8 +120,8 @@
     },
     {
       "path": "windows_desktop/build.ps1",
-      "bytes": 4394,
-      "sha256": "2cc9fbcbf11124324ad377720eaadcc1c697e7e064608b4793690167e4939dd8"
+      "bytes": 4426,
+      "sha256": "50447dc93e9227e89a0f5b32f511a9f8bd3d3d287728f0093fde09e9f333b442"
     },
     {
       "path": "windows_desktop/desktop.py",
@@ -192,9 +192,9 @@
     "compile": "passed",
     "windows_build": {
       "status": "failed",
-      "run_id": 41587089722,
-      "step": "unit tests",
-      "error": "UnicodeDecodeError from cp1252 reading UTF-8 UI HTML"
+      "run_id": 41587473102,
+      "step": "desktop tests",
+      "error": "UnicodeEncodeError printing Chinese log to cp1252 stdout"
     },
     "windows_installation": "not_run",
     "real_windows_wechat_export": "not_run",
@@ -202,6 +202,11 @@
       "previous_code": "failed",
       "fixed_code": "passed",
       "simulated_default_encoding": "cp1252"
+    },
+    "console_regression": {
+      "cp1252": "failed",
+      "utf8": "passed",
+      "test_count": 24
     }
   },
   "excluded": [
@@ -218,16 +223,11 @@
     "SOURCE_MANIFEST.json",
     ".github/workflows/windows-package.yml"
   ],
-  "approval_status": "pending_encoding_fix",
+  "approval_status": "pending_console_fix",
   "remote_operations_performed": false,
-  "revision_reason": "Windows cp1252 UnicodeDecodeError; explicit UTF-8 for UI test, import/cleanup/session/path records",
+  "revision_reason": "Explicit UTF-8 encoding for Python CI stdout/stderr",
   "changed_files": [
-    "macos_desktop/simple_desktop.py",
-    "macos_desktop/smart_import.py",
-    "macos_desktop/sticker_cleanup.py",
-    "macos_desktop/test_cleanup.py",
-    "windows_desktop/test_windows.py",
-    "windows_desktop/windows_paths.py"
+    "windows_desktop/build.ps1"
   ],
-  "previous_source_zip_sha256": "ed66d36838096b0126da1ba918bb4a275989f044b2f75d45fc4ca667c4250844"
+  "previous_source_zip_sha256": "561fee4a108f67fd43912941b5ecf48046c06f665a8daa73f94e1f678690f498"
 }
