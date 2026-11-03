@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
-  "prepared_at": "2026-11-03T06:16:39.204173+00:00",
+  "prepared_at": "2026-11-03T06:25:20.843661+00:00",
   "target_repository": "Ian010529/wechatemoji-windows",
   "visibility": "private",
   "branch": "main",
   "upstream": "https://github.com/henrytian1998/wechatemoji",
   "upstream_commit": "ecd6b55ce0d1eac9f74babf50c3820a2074db22a",
-  "source_zip_sha256": "a5dca78cbd6281ca039b5c5da0134e11beac9d10bed59dc061f18583f8f4d834",
+  "source_zip_sha256": "9efcd7903b3aa110d28e0417033318cff16b57268dfa60c524ce249f2323fb03",
   "source_files": [
     {
       "path": "LICENSE",
@@ -150,13 +150,13 @@
     },
     {
       "path": "windows_desktop/smoke_test.py",
-      "bytes": 4938,
-      "sha256": "98a8fd8b00672779855785c8c48c5598578cec57c660ac40b3f1e9d912d1a4c6"
+      "bytes": 4986,
+      "sha256": "515d03e5fff2515a65c5cb78d9f71cacae420a19030e0b77c95924b12f136089"
     },
     {
       "path": "windows_desktop/test_windows.py",
-      "bytes": 7220,
-      "sha256": "27ff3673f1c2e5cca14b3cc97f8bfc9597b73d91a484803b5f783460f075169f"
+      "bytes": 8887,
+      "sha256": "0184bccf3340507c2b2e66db7ebfa5dab58af677f47d0f1128913db355acf3e3"
     },
     {
       "path": "windows_desktop/wechatemoji-windows.spec",
@@ -178,21 +178,23 @@
     },
     "local_browser_simulation": {
       "status": "passed",
-      "animated": 101,
+      "synthetic_only": true,
       "batches": [
         50,
         50,
         1
       ],
+      "animated_verified": 101,
+      "frames_each": 3,
       "repeat_submissions": 0,
-      "automatic_retry": true,
+      "transient_load_failure_recovered": true,
       "frozen": false
     },
     "lint": "passed_scoped",
     "compile": "passed",
     "windows_build": {
       "status": "passed",
-      "run_id": 41588064511
+      "run_id": 41589018069
     },
     "windows_installation": "passed",
     "real_windows_wechat_export": "not_run",
@@ -207,7 +209,7 @@
       "test_count": 24
     },
     "windows_regression_tests": {
-      "count": 8,
+      "count": 9,
       "status": "passed",
       "authorship": "AI-drafted"
     },
@@ -218,7 +220,8 @@
     },
     "installed_application_self_test": {
       "status": "failed",
-      "error": "bundled browser looked up beside exe instead of _internal"
+      "error": "temporary profile deletion attempted before browser close; WinError 32",
+      "bundled_browser_launch": "passed"
     },
     "installed_ui_smoke": "not_run"
   },
@@ -236,12 +239,12 @@
     "SOURCE_MANIFEST.json",
     ".github/workflows/windows-package.yml"
   ],
-  "approval_status": "pending_resource_fix",
+  "approval_status": "pending_browser_cleanup_fix",
   "remote_operations_performed": false,
-  "revision_reason": "Resolve frozen Windows resources from sys._MEIPASS before UI/self-test initialization",
+  "revision_reason": "Close smoke-test browser before removing the temporary profile to prevent Windows file locks and preserve original failures",
   "changed_files": [
-    "windows_desktop/main.py",
+    "windows_desktop/smoke_test.py",
     "windows_desktop/test_windows.py"
   ],
-  "previous_source_zip_sha256": "f335e7f877656224f7369c0b212f1e68a4e1be0f71cd4f0490bb182ace98e112"
+  "previous_source_zip_sha256": "a5dca78cbd6281ca039b5c5da0134e11beac9d10bed59dc061f18583f8f4d834"
 }
