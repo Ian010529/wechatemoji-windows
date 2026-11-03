@@ -1,0 +1,34 @@
+name: Exact Mac installer runtime verification
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: macos-26
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Download the exact approved private installer
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: gh release download mac-v0.1.7-ci-input --pattern '*.dmg' --dir input
+      - name: Verify the acceptance checker rejects invalid input
+        run: python -m unittest discover -s ci -p 'test_*.py'
+      - name: Verify, copy to Applications, launch and close
+        run: |
+          python ci/macos_validate.py input/*.dmg evidence '/Applications/微信表情搬家.app'
+      - name: Verification evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mac-v0.1.7-runtime-verification
+          path: evidence/*
+          if-no-files-found: error
+          retention-days: 7
