@@ -1,0 +1,213 @@
+{
+  "schema_version": 1,
+  "prepared_at": "2026-11-03T05:52:28.462335+00:00",
+  "target_repository": "Ian010529/wechatemoji-windows",
+  "visibility": "private",
+  "branch": "main",
+  "upstream": "https://github.com/henrytian1998/wechatemoji",
+  "upstream_commit": "ecd6b55ce0d1eac9f74babf50c3820a2074db22a",
+  "source_zip_sha256": "ed66d36838096b0126da1ba918bb4a275989f044b2f75d45fc4ca667c4250844",
+  "source_files": [
+    {
+      "path": "LICENSE",
+      "bytes": 1086,
+      "sha256": "e052c03ae55e5271a2c1b09cde0eee7bc66448307a18257b092e21ba56e37e0d"
+    },
+    {
+      "path": "bridge_common.py",
+      "bytes": 4505,
+      "sha256": "b86df95cb645f62a1d9a41bf3cf23f4070b721eea80b40b5e8f24d37f98116d7"
+    },
+    {
+      "path": "config.py",
+      "bytes": 3012,
+      "sha256": "040cb0052acd89f8dab341545685799b05a79d5c6dd77c4d25a36a9cb42f8cae"
+    },
+    {
+      "path": "emoji_export_state.py",
+      "bytes": 2652,
+      "sha256": "d593dc5b9d4dc3ea37bdbd7e064a8583f659fab60b55f4e89315d42f7324480f"
+    },
+    {
+      "path": "emoji_images.py",
+      "bytes": 3968,
+      "sha256": "088de572d267bd42c655d2dd7d0fc52e5b3a26079289cb674d741fadbedb9b12"
+    },
+    {
+      "path": "feishu_uploader.py",
+      "bytes": 40381,
+      "sha256": "c8b93456f632e4230e902337a1459db9b48ee26a64282daa676c4bd1df5295d4"
+    },
+    {
+      "path": "gui.py",
+      "bytes": 26835,
+      "sha256": "04538986000aaab7fc9911ac6e7db87d9a553dea0fad811ac143c02f24314691"
+    },
+    {
+      "path": "key_extractor.py",
+      "bytes": 12510,
+      "sha256": "6cc35cc75488ace9448562e2f4b1bf67198dcbfbc2f696535d92545e0a2a5f1b"
+    },
+    {
+      "path": "macos_desktop/simple_desktop.py",
+      "bytes": 10182,
+      "sha256": "4c429664099cae5efd81b2ff8751d40db8a9d507c4c5c6cc31a4b1e55d4dbd70"
+    },
+    {
+      "path": "macos_desktop/simple_web/index.html",
+      "bytes": 10072,
+      "sha256": "46f8964eada1e3204c9673fcec5787aeb6a3045a1079a422c28fada4458a4c10"
+    },
+    {
+      "path": "macos_desktop/smart_import.py",
+      "bytes": 12185,
+      "sha256": "4cc3a125ce664c2d8d4122618eb743d7af3ffa509a78d95bf705e9b116393e25"
+    },
+    {
+      "path": "macos_desktop/sticker_cleanup.py",
+      "bytes": 11928,
+      "sha256": "f350f23b1dab524356cf963bd2a0d81eeaee5d263712d8d3fe39d916635d3613"
+    },
+    {
+      "path": "macos_desktop/test_cleanup.py",
+      "bytes": 9960,
+      "sha256": "ee7415b8b1da99df2c3c37bade49eb741b7ad6f95f7724fee0377195e39a639c"
+    },
+    {
+      "path": "macos_desktop/test_import_recovery.py",
+      "bytes": 6679,
+      "sha256": "44121684c08dfacefb16f71c9b8ce6a365d8028b32d75997aca126cb040af1e2"
+    },
+    {
+      "path": "macos_desktop/test_runtime.py",
+      "bytes": 1639,
+      "sha256": "16f51219a66bc214a550b82280aa447915ec52cc7537fb5a83a9ae9fc3d67410"
+    },
+    {
+      "path": "macos_paths.py",
+      "bytes": 12934,
+      "sha256": "5e004f6e18769d0a23adb14de542bbc3be8b7c0d9bc1b7e5a311244066e7f556"
+    },
+    {
+      "path": "macos_wechat.py",
+      "bytes": 2624,
+      "sha256": "d1cd51625a61c978c9a1f26e63a8c0b02ac0709770e273571e041a6e3624cbc0"
+    },
+    {
+      "path": "pyproject.toml",
+      "bytes": 542,
+      "sha256": "f9a2e834c4117c21e37aa75b2ca47316b9450dfb2bafa182ba1399f07917f1c8"
+    },
+    {
+      "path": "tauri_app/src-tauri/icons/icon.ico",
+      "bytes": 103777,
+      "sha256": "98d80d51795d6b854b3e089b3355599fcc6d94748c3b9b7909dcd0e353efd04f"
+    },
+    {
+      "path": "tests/test_animation.py",
+      "bytes": 9082,
+      "sha256": "6b27b14a4497e581a879ed6a1643ee8b247be68201579ca2e138bf7286b967d4"
+    },
+    {
+      "path": "tests/test_uploader_login.py",
+      "bytes": 2288,
+      "sha256": "0a387d5af0ab4417f3d056a3cd06763ebe05ff17ea12f976518818acff9ac73d"
+    },
+    {
+      "path": "wechat_extractor.py",
+      "bytes": 28473,
+      "sha256": "88b4a20e08e038ef54f774854563477cb4698ecfc33236639216c765b3b1effe"
+    },
+    {
+      "path": "windows_desktop/build.ps1",
+      "bytes": 4394,
+      "sha256": "2cc9fbcbf11124324ad377720eaadcc1c697e7e064608b4793690167e4939dd8"
+    },
+    {
+      "path": "windows_desktop/desktop.py",
+      "bytes": 2804,
+      "sha256": "6ec8613589055e543251792a8a222db5fb13f400aeec4abc3bbbe784df76c5bd"
+    },
+    {
+      "path": "windows_desktop/installer.iss",
+      "bytes": 2395,
+      "sha256": "58af02c0c0b0c39a77c0df18f4509ec4221948bb36e221a58581b044a0e89b3c"
+    },
+    {
+      "path": "windows_desktop/main.py",
+      "bytes": 2364,
+      "sha256": "a526b152c263c07e41a5a1f5bce8ccd1817e2545d7df5ec4f697ac07f13f8351"
+    },
+    {
+      "path": "windows_desktop/prepare_licenses.py",
+      "bytes": 997,
+      "sha256": "a3604958cbb91f6ae1bca27ae7128d97605fad795a058b8aa30c65d82831d2f8"
+    },
+    {
+      "path": "windows_desktop/requirements.txt",
+      "bytes": 108,
+      "sha256": "b65ca2685cc427bdbc366f5cd66e20bb8560275f26be0c316950b12839ad104a"
+    },
+    {
+      "path": "windows_desktop/smoke_test.py",
+      "bytes": 4938,
+      "sha256": "98a8fd8b00672779855785c8c48c5598578cec57c660ac40b3f1e9d912d1a4c6"
+    },
+    {
+      "path": "windows_desktop/test_windows.py",
+      "bytes": 5121,
+      "sha256": "9567c791838da494e7df291de5d2d2bf3209022ae2c89b35ce223882e8d1c2f4"
+    },
+    {
+      "path": "windows_desktop/wechatemoji-windows.spec",
+      "bytes": 1313,
+      "sha256": "2ad4cd83faa170744fab1612b658ed9f904f2e24668185a95341cbb24e7ea08c"
+    },
+    {
+      "path": "windows_desktop/windows_paths.py",
+      "bytes": 3448,
+      "sha256": "3e279c3c4faf39f859d2064a4515179ecb81e1d4ce5d7df235cc38cbac23fcea"
+    }
+  ],
+  "workflow_sha256": "3a44e41d13c2da5fa4aadf196ec03fbe68574b3e16f6f33470a84792d8f2a0a8",
+  "checks": {
+    "mac_host_unit_tests": {
+      "status": "passed",
+      "count": 62,
+      "authorship": "AI-drafted"
+    },
+    "local_browser_simulation": {
+      "status": "passed",
+      "animated": 101,
+      "batches": [
+        50,
+        50,
+        1
+      ],
+      "repeat_submissions": 0,
+      "automatic_retry": true,
+      "frozen": false
+    },
+    "lint": "passed_scoped",
+    "compile": "passed",
+    "windows_build": "not_run",
+    "windows_installation": "not_run",
+    "real_windows_wechat_export": "not_run"
+  },
+  "excluded": [
+    "real account data",
+    "exported emojis",
+    "browser sessions and cookies",
+    "decryption keys",
+    "Mac installer",
+    "development environment",
+    "unrelated working-tree changes"
+  ],
+  "remote_files": [
+    "source.zip",
+    "SOURCE_MANIFEST.json",
+    ".github/workflows/windows-package.yml"
+  ],
+  "approval_status": "pending",
+  "remote_operations_performed": false
+}
