@@ -1,0 +1,43 @@
+name: Windows standalone installer
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+concurrency:
+  group: windows-package
+  cancel-in-progress: false
+jobs:
+  package:
+    runs-on: windows-2022
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          architecture: x64
+      - name: Build, install, and verify bundled application
+        shell: pwsh
+        run: |
+          Expand-Archive source.zip -DestinationPath app
+          Set-Location app
+          ./windows_desktop/build.ps1
+      - name: Installer
+        uses: actions/upload-artifact@v4
+        with:
+          name: wechatemoji-windows-x64-v0.1.8
+          path: app/release/*
+          if-no-files-found: error
+          retention-days: 7
+      - name: Verification evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: windows-verification
+          path: app/evidence/*
+          if-no-files-found: ignore
+          retention-days: 7
