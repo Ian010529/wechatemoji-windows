@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
-  "prepared_at": "2026-11-03T05:52:28.462335+00:00",
+  "prepared_at": "2026-11-03T06:02:21.159048+00:00",
   "target_repository": "Ian010529/wechatemoji-windows",
   "visibility": "private",
   "branch": "main",
   "upstream": "https://github.com/henrytian1998/wechatemoji",
   "upstream_commit": "ecd6b55ce0d1eac9f74babf50c3820a2074db22a",
-  "source_zip_sha256": "ed66d36838096b0126da1ba918bb4a275989f044b2f75d45fc4ca667c4250844",
+  "source_zip_sha256": "561fee4a108f67fd43912941b5ecf48046c06f665a8daa73f94e1f678690f498",
   "source_files": [
     {
       "path": "LICENSE",
@@ -50,8 +50,8 @@
     },
     {
       "path": "macos_desktop/simple_desktop.py",
-      "bytes": 10182,
-      "sha256": "4c429664099cae5efd81b2ff8751d40db8a9d507c4c5c6cc31a4b1e55d4dbd70"
+      "bytes": 10200,
+      "sha256": "b0b78a48725e0b4182296d36fc35f6fe7449413a7608775e901c10bbc3dffb51"
     },
     {
       "path": "macos_desktop/simple_web/index.html",
@@ -60,18 +60,18 @@
     },
     {
       "path": "macos_desktop/smart_import.py",
-      "bytes": 12185,
-      "sha256": "4cc3a125ce664c2d8d4122618eb743d7af3ffa509a78d95bf705e9b116393e25"
+      "bytes": 12219,
+      "sha256": "bbe250989601b7ad054ef9e76df119516290b706decc6ada9f3fbef2bb4a166f"
     },
     {
       "path": "macos_desktop/sticker_cleanup.py",
-      "bytes": 11928,
-      "sha256": "f350f23b1dab524356cf963bd2a0d81eeaee5d263712d8d3fe39d916635d3613"
+      "bytes": 11962,
+      "sha256": "e2e467e9f6693f0620b7230c69ac987526a13c3d56e5580c71eae2df6a52efb1"
     },
     {
       "path": "macos_desktop/test_cleanup.py",
-      "bytes": 9960,
-      "sha256": "ee7415b8b1da99df2c3c37bade49eb741b7ad6f95f7724fee0377195e39a639c"
+      "bytes": 10885,
+      "sha256": "e9d177a4d4c7db4ebb89189827f49de585cafdae89b81b31a497250c7cf6fef8"
     },
     {
       "path": "macos_desktop/test_import_recovery.py",
@@ -155,8 +155,8 @@
     },
     {
       "path": "windows_desktop/test_windows.py",
-      "bytes": 5121,
-      "sha256": "9567c791838da494e7df291de5d2d2bf3209022ae2c89b35ce223882e8d1c2f4"
+      "bytes": 5273,
+      "sha256": "ea6ddf22c9822e0d0dfc1a2b5b434a5d5a1e60e7cec703ea6bf60837663be58c"
     },
     {
       "path": "windows_desktop/wechatemoji-windows.spec",
@@ -165,15 +165,15 @@
     },
     {
       "path": "windows_desktop/windows_paths.py",
-      "bytes": 3448,
-      "sha256": "3e279c3c4faf39f859d2064a4515179ecb81e1d4ce5d7df235cc38cbac23fcea"
+      "bytes": 3464,
+      "sha256": "8cf8fffb744a45120bb98ffb8eb08fa9361363c9be6f99a825e0b5a5e18c64ba"
     }
   ],
   "workflow_sha256": "3a44e41d13c2da5fa4aadf196ec03fbe68574b3e16f6f33470a84792d8f2a0a8",
   "checks": {
     "mac_host_unit_tests": {
       "status": "passed",
-      "count": 62,
+      "count": 63,
       "authorship": "AI-drafted"
     },
     "local_browser_simulation": {
@@ -190,9 +190,19 @@
     },
     "lint": "passed_scoped",
     "compile": "passed",
-    "windows_build": "not_run",
+    "windows_build": {
+      "status": "failed",
+      "run_id": 41587089722,
+      "step": "unit tests",
+      "error": "UnicodeDecodeError from cp1252 reading UTF-8 UI HTML"
+    },
     "windows_installation": "not_run",
-    "real_windows_wechat_export": "not_run"
+    "real_windows_wechat_export": "not_run",
+    "encoding_regression": {
+      "previous_code": "failed",
+      "fixed_code": "passed",
+      "simulated_default_encoding": "cp1252"
+    }
   },
   "excluded": [
     "real account data",
@@ -208,6 +218,16 @@
     "SOURCE_MANIFEST.json",
     ".github/workflows/windows-package.yml"
   ],
-  "approval_status": "pending",
-  "remote_operations_performed": false
+  "approval_status": "pending_encoding_fix",
+  "remote_operations_performed": false,
+  "revision_reason": "Windows cp1252 UnicodeDecodeError; explicit UTF-8 for UI test, import/cleanup/session/path records",
+  "changed_files": [
+    "macos_desktop/simple_desktop.py",
+    "macos_desktop/smart_import.py",
+    "macos_desktop/sticker_cleanup.py",
+    "macos_desktop/test_cleanup.py",
+    "windows_desktop/test_windows.py",
+    "windows_desktop/windows_paths.py"
+  ],
+  "previous_source_zip_sha256": "ed66d36838096b0126da1ba918bb4a275989f044b2f75d45fc4ca667c4250844"
 }
