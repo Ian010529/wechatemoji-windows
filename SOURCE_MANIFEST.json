@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
-  "prepared_at": "2026-11-03T06:25:20.843661+00:00",
+  "prepared_at": "2026-11-03T06:37:58.372153+00:00",
   "target_repository": "Ian010529/wechatemoji-windows",
   "visibility": "private",
   "branch": "main",
   "upstream": "https://github.com/henrytian1998/wechatemoji",
   "upstream_commit": "ecd6b55ce0d1eac9f74babf50c3820a2074db22a",
-  "source_zip_sha256": "9efcd7903b3aa110d28e0417033318cff16b57268dfa60c524ce249f2323fb03",
+  "source_zip_sha256": "805bf1c47ff0fac8b3386b9a261c465ac40b17a3987e260482dfb7df081f35fd",
   "source_files": [
     {
       "path": "LICENSE",
@@ -125,8 +125,8 @@
     },
     {
       "path": "windows_desktop/desktop.py",
-      "bytes": 2804,
-      "sha256": "6ec8613589055e543251792a8a222db5fb13f400aeec4abc3bbbe784df76c5bd"
+      "bytes": 3024,
+      "sha256": "2628c1110d5a345cae5868880d30477851128fac5131770a0fd85fd0de460ba6"
     },
     {
       "path": "windows_desktop/installer.iss",
@@ -135,8 +135,8 @@
     },
     {
       "path": "windows_desktop/main.py",
-      "bytes": 2554,
-      "sha256": "07f5801460ef9d04f3fc2b35318a89c7055b29412b9a549fc8dff5ff73ade47b"
+      "bytes": 3104,
+      "sha256": "e722d3ec8bdba2f2a7b58393ec685d052f82d95bcb0b4a7f71c916b85b35e469"
     },
     {
       "path": "windows_desktop/prepare_licenses.py",
@@ -155,8 +155,8 @@
     },
     {
       "path": "windows_desktop/test_windows.py",
-      "bytes": 8887,
-      "sha256": "0184bccf3340507c2b2e66db7ebfa5dab58af677f47d0f1128913db355acf3e3"
+      "bytes": 11260,
+      "sha256": "a2ae0ff14e115348a83a9be8068302b8784308c9a1ff896dd8756e2a41fb9142"
     },
     {
       "path": "windows_desktop/wechatemoji-windows.spec",
@@ -173,7 +173,7 @@
   "checks": {
     "mac_host_unit_tests": {
       "status": "passed",
-      "count": 63,
+      "count": 66,
       "authorship": "AI-drafted"
     },
     "local_browser_simulation": {
@@ -194,7 +194,7 @@
     "compile": "passed",
     "windows_build": {
       "status": "passed",
-      "run_id": 41589018069
+      "run_id": 41589869203
     },
     "windows_installation": "passed",
     "real_windows_wechat_export": "not_run",
@@ -209,7 +209,7 @@
       "test_count": 24
     },
     "windows_regression_tests": {
-      "count": 9,
+      "count": 10,
       "status": "passed",
       "authorship": "AI-drafted"
     },
@@ -219,11 +219,30 @@
       "fixture": "Installed App with spaces and _internal runtime/UI"
     },
     "installed_application_self_test": {
-      "status": "failed",
-      "error": "temporary profile deletion attempted before browser close; WinError 32",
-      "bundled_browser_launch": "passed"
+      "status": "passed",
+      "run_id": 41589869203,
+      "frozen": true,
+      "animated_verified": 101,
+      "frames_each": 3,
+      "batches": [
+        50,
+        50,
+        1
+      ],
+      "repeat_submissions": 0,
+      "transient_load_failure_recovered": true,
+      "bundled_dependency_origins": "all under sys._MEIPASS"
     },
-    "installed_ui_smoke": "not_run"
+    "installed_ui_smoke": {
+      "status": "failed",
+      "reason": "120-second timeout, no UI report",
+      "fix_not_yet_verified_on_windows": true
+    },
+    "js_bridge_regression": {
+      "previous_code": "failed: native object inspected",
+      "fixed_code": "passed",
+      "exposed_methods": 10
+    }
   },
   "excluded": [
     "real account data",
@@ -239,12 +258,13 @@
     "SOURCE_MANIFEST.json",
     ".github/workflows/windows-package.yml"
   ],
-  "approval_status": "pending_browser_cleanup_fix",
+  "approval_status": "pending_ui_bridge_fix",
   "remote_operations_performed": false,
-  "revision_reason": "Close smoke-test browser before removing the temporary profile to prevent Windows file locks and preserve original failures",
+  "revision_reason": "Use documented Window.expose for ten frontend methods without recursive native-window traversal; add UI-smoke startup report and pywebview file logging",
   "changed_files": [
-    "windows_desktop/smoke_test.py",
+    "windows_desktop/desktop.py",
+    "windows_desktop/main.py",
     "windows_desktop/test_windows.py"
   ],
-  "previous_source_zip_sha256": "a5dca78cbd6281ca039b5c5da0134e11beac9d10bed59dc061f18583f8f4d834"
+  "previous_source_zip_sha256": "9efcd7903b3aa110d28e0417033318cff16b57268dfa60c524ce249f2323fb03"
 }
