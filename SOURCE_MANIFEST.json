@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
-  "prepared_at": "2026-11-03T06:04:47.455057+00:00",
+  "prepared_at": "2026-11-03T06:16:39.204173+00:00",
   "target_repository": "Ian010529/wechatemoji-windows",
   "visibility": "private",
   "branch": "main",
   "upstream": "https://github.com/henrytian1998/wechatemoji",
   "upstream_commit": "ecd6b55ce0d1eac9f74babf50c3820a2074db22a",
-  "source_zip_sha256": "f335e7f877656224f7369c0b212f1e68a4e1be0f71cd4f0490bb182ace98e112",
+  "source_zip_sha256": "a5dca78cbd6281ca039b5c5da0134e11beac9d10bed59dc061f18583f8f4d834",
   "source_files": [
     {
       "path": "LICENSE",
@@ -135,8 +135,8 @@
     },
     {
       "path": "windows_desktop/main.py",
-      "bytes": 2364,
-      "sha256": "a526b152c263c07e41a5a1f5bce8ccd1817e2545d7df5ec4f697ac07f13f8351"
+      "bytes": 2554,
+      "sha256": "07f5801460ef9d04f3fc2b35318a89c7055b29412b9a549fc8dff5ff73ade47b"
     },
     {
       "path": "windows_desktop/prepare_licenses.py",
@@ -155,8 +155,8 @@
     },
     {
       "path": "windows_desktop/test_windows.py",
-      "bytes": 5273,
-      "sha256": "ea6ddf22c9822e0d0dfc1a2b5b434a5d5a1e60e7cec703ea6bf60837663be58c"
+      "bytes": 7220,
+      "sha256": "27ff3673f1c2e5cca14b3cc97f8bfc9597b73d91a484803b5f783460f075169f"
     },
     {
       "path": "windows_desktop/wechatemoji-windows.spec",
@@ -191,12 +191,10 @@
     "lint": "passed_scoped",
     "compile": "passed",
     "windows_build": {
-      "status": "failed",
-      "run_id": 41587473102,
-      "step": "desktop tests",
-      "error": "UnicodeEncodeError printing Chinese log to cp1252 stdout"
+      "status": "passed",
+      "run_id": 41588064511
     },
-    "windows_installation": "not_run",
+    "windows_installation": "passed",
     "real_windows_wechat_export": "not_run",
     "encoding_regression": {
       "previous_code": "failed",
@@ -207,7 +205,22 @@
       "cp1252": "failed",
       "utf8": "passed",
       "test_count": 24
-    }
+    },
+    "windows_regression_tests": {
+      "count": 8,
+      "status": "passed",
+      "authorship": "AI-drafted"
+    },
+    "resource_regression": {
+      "previous_code": "failed",
+      "fixed_code": "passed",
+      "fixture": "Installed App with spaces and _internal runtime/UI"
+    },
+    "installed_application_self_test": {
+      "status": "failed",
+      "error": "bundled browser looked up beside exe instead of _internal"
+    },
+    "installed_ui_smoke": "not_run"
   },
   "excluded": [
     "real account data",
@@ -223,11 +236,12 @@
     "SOURCE_MANIFEST.json",
     ".github/workflows/windows-package.yml"
   ],
-  "approval_status": "pending_console_fix",
+  "approval_status": "pending_resource_fix",
   "remote_operations_performed": false,
-  "revision_reason": "Explicit UTF-8 encoding for Python CI stdout/stderr",
+  "revision_reason": "Resolve frozen Windows resources from sys._MEIPASS before UI/self-test initialization",
   "changed_files": [
-    "windows_desktop/build.ps1"
+    "windows_desktop/main.py",
+    "windows_desktop/test_windows.py"
   ],
-  "previous_source_zip_sha256": "561fee4a108f67fd43912941b5ecf48046c06f665a8daa73f94e1f678690f498"
+  "previous_source_zip_sha256": "f335e7f877656224f7369c0b212f1e68a4e1be0f71cd4f0490bb182ace98e112"
 }
